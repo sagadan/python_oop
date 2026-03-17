@@ -311,3 +311,7 @@ def demo():
 if __name__ == "__main__":
     demo()
 ```
+
+## Вывод
+
+<img width="785" height="701" alt="вывод_лаб01" src="https://github.com/user-attachments/assets/66ca3ec5-1a65-4fdf-a684-bc6e41f5c561" />
