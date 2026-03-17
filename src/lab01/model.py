@@ -1,0 +1,196 @@
+class Character: 
+
+    min_health = 0
+    max_health = 100
+    min_stamina = 0
+    max_stamina = 40
+    min_power = 1
+    max_power = 60
+    min_intelligence = 1
+    max_intelligence = 80
+
+    def __init__(self, game_name: str, health: int, stamina: int, power: int, intelligence: int):
+        if isinstance(game_name, str): 
+            if game_name.strip():
+                self._game_name = game_name.strip()
+            else:
+                raise ValueError('Ошибка! Имя не может быть пустым.')
+        else:
+            raise TypeError('Ошибка! Имя должно быть строкой.')
+        
+        if isinstance(health, (int, float)):
+            if health >= 0:  
+                if health <= 100:
+                    self._health = health 
+                else:
+                    raise ValueError('Ошибка! Здоровье не может быть больше 100.')
+            else:
+                raise ValueError('Ошибка! Здоровье не может быть отрицательным.')
+        else:
+            raise TypeError('Ошибка! Здоровье должно быть числом.')
+        
+        if isinstance(stamina, (int, float)):
+            if stamina >= 0:
+                if stamina <= 40:
+                    self._stamina = stamina
+                else:
+                    raise ValueError('Ошибка! Выносливость не может быть больше 40.')
+            else:
+                raise ValueError('Ошибка! Выносливость не может быть меньше 0.')
+        else:
+            raise TypeError('Ошибка! Выносливость должна быть числом.')
+        
+        if isinstance(power, (int, float)):
+            if power >= 1:
+                if power <= 60:
+                    self._power = power
+                else:
+                    raise ValueError('Ошибка! Сила не может быть больше 60.')
+            else:
+                raise ValueError('Ошибка! Сила не может быть меньше 1.')
+        else:
+            raise TypeError('Ошибка! Сила должна быть числом.')
+        
+
+        if isinstance(intelligence, (int, float)):
+            if intelligence >= 1:
+                if intelligence <= 80:
+                    self._intelligence = intelligence
+                else:
+                    raise ValueError('Ошибка! Интеллект не может быть больше 80.')
+            else:
+                raise ValueError('Ошибка! Интеллект не может быть меньше 1.')
+        else:
+            raise TypeError('Ошибка! Интеллект должен быть числом.')
+    
+    # Геттеры
+    @property
+    def game_name(self):
+        return self._game_name
+    
+    @property 
+    def health(self):
+        return self._health
+    
+    @property 
+    def stamina(self):
+        return self._stamina
+    
+    @property
+    def power(self):
+        return self._power
+    
+    @property 
+    def intelligence(self):
+        return self._intelligence
+    
+    # Сеттеры
+    @game_name.setter
+    def game_name(self, value):
+        if isinstance(value, str):
+            if value.strip():
+                self._game_name = value.strip()
+            else:
+                raise ValueError('Ошибка! Имя персонажа не может быть пустым.')
+        else:
+            raise TypeError('Ошибка! Имя персонажа должно быть строкой.')
+    
+    @health.setter
+    def health(self, value):
+        if isinstance(value, (int, float)):
+            if value >= 0:
+                if value <= 100:
+                    self._health = value
+                else:
+                    raise ValueError('Ошибка! Здоровье не может превышать 100.')
+            else:
+                raise ValueError('Ошибка! Здоровье не может быть отрицательным.')
+        else:
+            raise TypeError('Ошибка! Здоровье должно быть числом.')
+    
+    @stamina.setter
+    def stamina(self, value):
+        if isinstance(value, (int, float)):
+            if value >= 0:
+                if value <= 40:
+                    self._stamina = value
+                else:
+                    raise ValueError('Ошибка! Выносливость не может быть больше 40.')
+            else:
+                raise ValueError('Ошибка! Выносливость не может быть отрицательной.')
+        else:
+            raise TypeError('Ошибка! Выносливость должна быть числом.')
+    
+    @power.setter
+    def power(self, value):
+        if isinstance(value, (int, float)):
+            if value >= 1:
+                if value <= 60:
+                    self._power = value
+                else:
+                    raise ValueError('Ошибка! Сила не может быть больше 60.')
+            else:
+                raise ValueError('Ошибка! Сила должна быть не менее 1.')
+        else:
+            raise TypeError('Ошибка! Сила должна быть числом.')
+    
+    @intelligence.setter
+    def intelligence(self, value):
+        if isinstance(value, (int, float)):
+            if value >= 1:
+                if value <= 80:
+                    self._intelligence = value
+                else:
+                    raise ValueError('Ошибка! Интеллект не может быть больше 80.')
+            else:
+                raise ValueError('Ошибка! Интеллект должен быть не менее 1.')
+        else:
+            raise TypeError('Ошибка! Интеллект должен быть числом.')
+    
+    # Бизнес-методы
+    def attack(self, target):
+        if not isinstance(target, Character):  
+            raise TypeError('Ошибка! Можно атаковать только другого персонажа.')
+        if self._stamina < 5:
+            return f"{self._game_name} слишком устал для атаки"
+        
+        damage = self._power * 2
+        target.health = max(0, target.health - damage)
+        self._stamina -= 5
+
+        return (f"{self._game_name} атакует {target.game_name} "
+                f"и наносит {damage} урона.")
+
+    def magic_attack(self, target):
+        if not isinstance(target, Character):  
+            raise TypeError('Ошибка! Можно атаковать только другого персонажа.')
+        if self._stamina < 8:
+            return f"{self._game_name} слишком устал для магии."
+        if self._intelligence < 10:
+            return f"{self._game_name} недостаточно умен для магии."
+        
+        magic_damage = self._intelligence * 2
+        target.health = max(0, target.health - magic_damage)
+        self._stamina -= 8
+        
+        return (f"{self._game_name} произносит заклинание на {target.game_name} "
+                f"и наносит {magic_damage} магического урона!")
+    
+    # Магические методы 
+    def __str__(self):
+        health_percent = (self._health / 100) * 100 
+
+        if self._health > 80:
+            health_status = 'Здоров'
+        elif self._health > 50:
+            health_status = 'Слегка ранен' 
+        elif self._health > 20:  
+            health_status = 'Сильно ранен'
+        else:
+            health_status = 'Почти мертв'
+        
+        return (f"⚔️ {self._game_name} [{health_status}]\n"
+                f"   Здоровье: {self._health}/100 ({health_percent:.1f}%)\n"
+                f"   Выносливость: {self._stamina}/40\n"
+                f"   Сила: {self._power}/60\n"
+                f"   Интеллект: {self._intelligence}/80")
