@@ -33,7 +33,7 @@
 <img width="572" height="478" alt="Снимок экрана 2026-03-17 в 23 40 05" src="https://github.com/user-attachments/assets/9761d0fd-b47f-43f4-a31b-c86e8327c2a5" />
 
 
-## Model.py
+## model.py
 
 ```
 class Character: 
