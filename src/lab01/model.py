@@ -2,7 +2,6 @@ class Character:
 
     min_health = 0
     max_health = 100
-<<<<<<< HEAD
 
     min_stamina = 0
     max_stamina = 40
@@ -10,14 +9,10 @@ class Character:
     min_power = 1
     max_power = 60
 
-=======
-    min_stamina = 0
-    max_stamina = 40
-    min_power = 1
-    max_power = 60
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
     min_intelligence = 1
     max_intelligence = 80
+
+
 
     def __init__(self, game_name: str, health: int, stamina: int, power: int, intelligence: int):
         if isinstance(game_name, str): 
@@ -28,7 +23,6 @@ class Character:
         else:
             raise TypeError('Ошибка! Имя должно быть строкой.')
         
-<<<<<<< HEAD
         # Здоровье
         if isinstance(health, (int, float)):
             if self.min_health <= health <= self.max_health:  
@@ -62,53 +56,7 @@ class Character:
                 self._intelligence = intelligence
             else:
                 raise ValueError(f'Ошибка! Интеллект должен быть от {self.min_intelligence} до {self.max_intelligence}.')
-=======
-        if isinstance(health, (int, float)):
-            if health >= 0:  
-                if health <= 100:
-                    self._health = health 
-                else:
-                    raise ValueError('Ошибка! Здоровье не может быть больше 100.')
-            else:
-                raise ValueError('Ошибка! Здоровье не может быть отрицательным.')
-        else:
-            raise TypeError('Ошибка! Здоровье должно быть числом.')
         
-        if isinstance(stamina, (int, float)):
-            if stamina >= 0:
-                if stamina <= 40:
-                    self._stamina = stamina
-                else:
-                    raise ValueError('Ошибка! Выносливость не может быть больше 40.')
-            else:
-                raise ValueError('Ошибка! Выносливость не может быть меньше 0.')
-        else:
-            raise TypeError('Ошибка! Выносливость должна быть числом.')
-        
-        if isinstance(power, (int, float)):
-            if power >= 1:
-                if power <= 60:
-                    self._power = power
-                else:
-                    raise ValueError('Ошибка! Сила не может быть больше 60.')
-            else:
-                raise ValueError('Ошибка! Сила не может быть меньше 1.')
-        else:
-            raise TypeError('Ошибка! Сила должна быть числом.')
-        
-
-        if isinstance(intelligence, (int, float)):
-            if intelligence >= 1:
-                if intelligence <= 80:
-                    self._intelligence = intelligence
-                else:
-                    raise ValueError('Ошибка! Интеллект не может быть больше 80.')
-            else:
-                raise ValueError('Ошибка! Интеллект не может быть меньше 1.')
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
-        else:
-            raise TypeError('Ошибка! Интеллект должен быть числом.')
-    
     # Геттеры
     @property
     def game_name(self):
@@ -144,12 +92,10 @@ class Character:
     @health.setter
     def health(self, value):
         if isinstance(value, (int, float)):
-<<<<<<< HEAD
             if self.min_health <= value <= self.max_health:  
                 self._health = value
             else:
                 raise ValueError(f'Ошибка! Здоровье должно быть от {self.min_health} до {self.max_health}.')
-=======
             if value >= 0:
                 if value <= 100:
                     self._health = value
@@ -157,19 +103,16 @@ class Character:
                     raise ValueError('Ошибка! Здоровье не может превышать 100.')
             else:
                 raise ValueError('Ошибка! Здоровье не может быть отрицательным.')
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
         else:
             raise TypeError('Ошибка! Здоровье должно быть числом.')
     
     @stamina.setter
     def stamina(self, value):
         if isinstance(value, (int, float)):
-<<<<<<< HEAD
             if self.min_stamina <= value <= self.max_stamina:  
                 self._stamina = value
             else:
                 raise ValueError(f'Ошибка! Выносливость должна быть от {self.min_stamina} до {self.max_stamina}.')
-=======
             if value >= 0:
                 if value <= 40:
                     self._stamina = value
@@ -177,19 +120,16 @@ class Character:
                     raise ValueError('Ошибка! Выносливость не может быть больше 40.')
             else:
                 raise ValueError('Ошибка! Выносливость не может быть отрицательной.')
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
         else:
             raise TypeError('Ошибка! Выносливость должна быть числом.')
     
     @power.setter
     def power(self, value):
         if isinstance(value, (int, float)):
-<<<<<<< HEAD
             if self.min_power <= value <= self.max_power:  
                 self._power = value
             else:
                 raise ValueError(f'Ошибка! Сила должна быть от {self.min_power} до {self.max_power}.')
-=======
             if value >= 1:
                 if value <= 60:
                     self._power = value
@@ -197,19 +137,16 @@ class Character:
                     raise ValueError('Ошибка! Сила не может быть больше 60.')
             else:
                 raise ValueError('Ошибка! Сила должна быть не менее 1.')
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
         else:
             raise TypeError('Ошибка! Сила должна быть числом.')
     
     @intelligence.setter
     def intelligence(self, value):
         if isinstance(value, (int, float)):
-<<<<<<< HEAD
             if self.min_intelligence <= value <= self.max_intelligence:  
                 self._intelligence = value
             else:
                 raise ValueError(f'Ошибка! Интеллект должен быть от {self.min_intelligence} до {self.max_intelligence}.')
-=======
             if value >= 1:
                 if value <= 80:
                     self._intelligence = value
@@ -217,7 +154,6 @@ class Character:
                     raise ValueError('Ошибка! Интеллект не может быть больше 80.')
             else:
                 raise ValueError('Ошибка! Интеллект должен быть не менее 1.')
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296
         else:
             raise TypeError('Ошибка! Интеллект должен быть числом.')
     
@@ -263,7 +199,6 @@ class Character:
         else:
             health_status = 'Почти мертв'
         
-<<<<<<< HEAD
         return (f" {self._game_name} [{health_status}]\n"
                 f"   Здоровье: {self._health}/100 ({health_percent:.1f}%)\n"
                 f"   Выносливость: {self._stamina}/40\n"
@@ -282,10 +217,8 @@ class Character:
         if not isinstance(other, Character):
             return NotImplemented
         return self._game_name == other._game_name
-=======
-        return (f"⚔️ {self._game_name} [{health_status}]\n"
+        return (f" {self._game_name} [{health_status}]\n"
                 f"   Здоровье: {self._health}/100 ({health_percent:.1f}%)\n"
                 f"   Выносливость: {self._stamina}/40\n"
                 f"   Сила: {self._power}/60\n"
                 f"   Интеллект: {self._intelligence}/80")
->>>>>>> e5e89da1c9f4c914f0294636f87306d6300dd296

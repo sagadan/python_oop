@@ -58,12 +58,8 @@ def demo():
     except ValueError as e:
         print(f"   Ошибка: {e}")
     
-    # 8. Атрибуты класса
-    print("\n8. Атрибуты класса:")
-    print(f"   Оружие: {list(Character.WEAPONS.keys())}")
-    
-    # 9. Бизнес-методы
-    print("\n9. Бизнес-методы:")
+    # 8. Бизнес-методы
+    print("\n8. Бизнес-методы:")
     
     
     # Атаки
@@ -71,8 +67,8 @@ def demo():
     print(f"   {mage.magic_attack(warrior)}")
     
     
-    # 10. ФИНАЛЬНОЕ СОСТОЯНИЕ
-    print("\n10. Итоговое состояние:")
+    # 9. ФИНАЛЬНОЕ СОСТОЯНИЕ
+    print("\n9. Итоговое состояние:")
     print(warrior)
     print(mage)
     
