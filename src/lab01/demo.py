@@ -1,4 +1,4 @@
-from model import Character  
+from model import Character  # импортируем класс Character
 
 def demo():
     """Компактная демонстрация работы класса Character."""
@@ -12,6 +12,8 @@ def demo():
     warrior = Character("Фродо", 100, 35, 55, 20) 
     mage = Character("Гэндальф", 80, 25, 15, 75)        
     print("   Воин и Маг созданы")
+    warrior = Character("Гэндальф", 100, 35, 55, 20)  
+    print("   ✅ Воин и Маг созданы")
     
     # 2. Вывод через print
     print("\n2. Вывод информации (__str__):")
@@ -56,15 +58,21 @@ def demo():
     except ValueError as e:
         print(f"   Ошибка: {e}")
     
-    # 8. Бизнес-методы
-    print("\n8. Бизнес-методы:")
+    # 8. Атрибуты класса
+    print("\n8. Атрибуты класса:")
+    print(f"   Оружие: {list(Character.WEAPONS.keys())}")
+    
+    # 9. Бизнес-методы
+    print("\n9. Бизнес-методы:")
+    
     
     # Атаки
     print(f"   {warrior.attack(mage)}")
     print(f"   {mage.magic_attack(warrior)}")
     
-    # 9. Финальное состояние
-    print("\n9. Итоговое состояние:")
+    
+    # 10. ФИНАЛЬНОЕ СОСТОЯНИЕ
+    print("\n10. Итоговое состояние:")
     print(warrior)
     print(mage)
     
