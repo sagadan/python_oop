@@ -62,3 +62,13 @@ print("\n2) Список здоровых персонажей:")
 for character in healthy_characters:
     print(f"   {character.game_name}, здоровье: {character.health}")
 
+
+print("\n> Сортировка по имени (А-Я):")
+character_collection.sort_by_name()
+for i, char in enumerate(character_collection, 1):
+    print(f"   {i}. {char.game_name}")
+
+print("\n> Сортировка по силе (от сильного к слабому):")
+character_collection.sort_by_power(reverse=True)
+for i, char in enumerate(character_collection, 1):
+    print(f"   {i}. {char.game_name} (сила: {char.power})")

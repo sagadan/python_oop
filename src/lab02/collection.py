@@ -78,6 +78,16 @@ class CharacterCollection:
         return new_collection 
     
 
+    # Сортировка
+
+    def sort_by_name(self, reverse=False):
+        "Сортировка по имени"
+        self._characters.sort(key=lambda c: c.game_name.lower(), reverse=reverse)
+    
+    def sort_by_power(self, reverse=False):
+        """Сортировка по силе"""
+        self._characters.sort(key=lambda c: c.power, reverse=reverse)
+
     # Магические методы
 
     def __str__(self):
