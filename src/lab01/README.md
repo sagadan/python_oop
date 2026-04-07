@@ -72,25 +72,25 @@
 
 Создание персонажей и вывод информации
 
-![alt text](image.png)
+![alt text](../../images/lab01/image.png)
 
 Сравнение через eq
 
-![alt text](image-1.png)
+![alt text](../../images/lab01/image-1.png)
 
 Предтавение через repr
 
-![alt text](image-3.png)
+![alt text](../../images/lab01/image-3.png)
 
 Примеры ошибок
 
-![alt text](image-4.png)
+![alt text](../../images/lab01/image-4.png)
 
 Доступ к атрибутам 
 
-![alt text](image-5.png)
+![alt text](../../images/lab01/image-5.png)
   
 Бизнес-методы 
 
-![alt text](image-6.png)
+![alt text](../../images/lab01/image-6.png)
 
