@@ -26,6 +26,7 @@ class CharacterCollection:
         self._characters.remove(character)
 
     def remove_at(self, index):
+        "удалить по индексу"
         if 0 <= index <= len(self._characters):
             return self._chaarcters.pop(index)
         raise IndexError (f"Индекс не попадает в диапазон от 0 до {len(self._characters)}")
