@@ -95,3 +95,4 @@ class Archer(Character):
     
     def __str__(self):
         return f"{self.game_name} (Лучник)\n  Сила: {self.power}\n  Точность: {self.accuracy}%"
+    
