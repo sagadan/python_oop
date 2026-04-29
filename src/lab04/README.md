@@ -63,7 +63,7 @@ def print_all(characters: list[Printable]):
         print(char.to_string())
 ```
 
-![alt text](image-1.png)
+![alt text](<../../images/lab04/image copy.png>)
 
 ## Сценарий 3: Коллекция и фильтрация по интерфейсу
 
@@ -80,4 +80,4 @@ def filter_by_interface(self, interface_type) -> List:
     return [char for char in self._characters if isinstance(char, interface_type)]
 ```
 
-![alt text](image-2.png)
+![images/lab04/image copy 2.png](<../../images/lab04/image copy 2.png>)
