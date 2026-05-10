@@ -15,13 +15,7 @@ class Comparable(ABC):
     
     @abstractmethod
     def compare_to(self, other: Any) -> int:
-        """
-        Сравнивает текущий объект с другим.
-        Возвращает:
-        - отрицательное число, если self < other
-        - 0, если self == other
-        - положительное число, если self > other
-        """
+        """Сравнивает текущий объект с другим"""
         pass
 
 
@@ -29,7 +23,7 @@ class PowerRatable(ABC):
     """Интерфейс для объектов, имеющих рейтинг силы"""
     
     @abstractmethod
-    def get_power_rating(self) -> float:  # ← ИСПРАВЛЕНО: rating, а не raiting
+    def get_power_rating(self) -> float:  
         """Возвращает рейтинг силы объекта"""
         pass
 
