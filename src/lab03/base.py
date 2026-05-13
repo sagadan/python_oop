@@ -207,13 +207,3 @@ class Character:
         if not isinstance(other, Character):
             return NotImplemented
         return self._game_name == other._game_name
-
-
-
-
-
-
-
-
-
-
