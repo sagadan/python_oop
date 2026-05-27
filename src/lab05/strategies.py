@@ -18,29 +18,23 @@ class StrategyByHealth:
 
 
 def filter_warrior(character):
-    "Только воины"
     return isinstance(character, Warrior)
 
-def filter_mage(character):
-    "Только маги"
+def filter_mage(character):  
     return isinstance(character, Mage)
 
-def filter_healthy(character):
-    "Здоровые (>50 здоровья)"
+def filter_healthy(character):   
     return character.health > 50
 
 def filter_powerful(character):
-    "Сильные (>30 силы)"
     return character.power > 30
 
 
 
 def make_health_filter(min_health):
-    "Создаёт фильтр по минимальному здоровью"
     return lambda c: c.health >= min_health
 
 def make_power_filter(min_power):
-    "Создаёт фильтр по минимальной силе"
     return lambda c: c.power >= min_power
 
 
