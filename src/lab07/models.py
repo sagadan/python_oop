@@ -1,15 +1,10 @@
-"""
-Модуль с классами предметной области "Персонажи RPG"
-Содержит базовый класс Character и классы-наследники: Warrior, Mage, Archer
-"""
-
 from abc import ABC, abstractmethod
 from typing import List, Any, Protocol, Union
 from datetime import datetime
 
 
 class Displayable(Protocol):
-    """Протокол для объектов, которые могут отображаться"""
+    
     def display(self) -> str:
         """Возвращает строковое представление объекта"""
         ...
